@@ -1,0 +1,59 @@
+/* PetProfile.css */
+
+/* Pet container */
+.pet-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  /* Pet profile */
+  .pet-profile {
+    width: calc(25% - 20px); /* 25% width for each pet profile with margin */
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+  }
+  
+  .pet-profile img {
+    width: 100%; /* Ensure the image fills the container */
+  }
+  
+  .pet-profile h2 {
+    font-family: "Hanuman", serif; /* Apply the Hanuman font to pet names */
+    font-weight: 700;
+    font-size: 32px; /* Font size 32px for pet names */
+    margin-top: 10px;
+  }
+  
+  .pet-profile p {
+    font-family: "Inria Sans", sans-serif; /* Apply Inria Sans font to pet descriptions */
+    font-size: 24px; /* Font size 24px for pet descriptions */
+  }
+  
+  /* Overflow scroll for descriptions */
+  .overflow-scroll {
+    max-height: 100px; /* Limit description height */
+    overflow-y: auto; /* Enable vertical scrolling if necessary */
+  }
+  
+  /* Message button */
+  #message-button {
+    position: fixed;
+    bottom: 20px;
+    left: 0; /* Anchor to the left side of the screen */
+    width: 80px; /* Adjust as needed */
+    height: 80px; /* Adjust as needed */
+    background-color: #6E2A7E;
+    border: none;
+    border-radius: 0 40px 40px 0; /* Rounded on the right side */
+    overflow: hidden; /* Ensure the image is contained within the button */
+    padding: 15px; /* Add padding */
+  }
+  
+  #message-button img {
+    width: 100%;
+    height: 100%;
+
+    filter: brightness(0) invert(1); /* Make the image white */
+  }
