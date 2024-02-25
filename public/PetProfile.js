@@ -1,30 +1,28 @@
-// carousel.js
+// Sample data for a dog
+var dogData = {
+  name: "Buddy",
+  age: "2 years old",
+  species: "Dog",
+  type: "Golden Retriever",
+  size: "Large",
+  shelter: "XYZ Shelter",
+  behaviors: "Friendly, energetic",
+  background: "Buddy was found as a stray and brought to the shelter.",
+  image: "sample_dog.jpg" // Assuming the image file is in the assets folder
+};
 
-const carousel = document.querySelector('.carousel');
-const carouselWrapper = document.querySelector('.carousel-wrapper');
+// Function to update placeholders with actual data
+function updateDogProfile(data) {
+  document.getElementById('dog-name-placeholder').innerText = "Hello, my name is " + data.name;
+  document.getElementById('age-placeholder').innerText = data.age;
+  document.getElementById('species-placeholder').innerText = data.species;
+  document.getElementById('type-placeholder').innerText = data.type;
+  document.getElementById('size-placeholder').innerText = data.size;
+  document.getElementById('shelter-placeholder').innerText = data.shelter;
+  document.getElementById('behaviors-characteristics-placeholder').innerText = data.behaviors;
+  document.getElementById('background-placeholder').innerText = data.background;
+  document.getElementById('dog-image-placeholder').src = "assets/" + data.image;
+}
 
-let isDown = false;
-let startX;
-let scrollLeft;
-
-carouselWrapper.addEventListener('mousedown', (e) => {
-  isDown = true;
-  startX = e.pageX - carouselWrapper.offsetLeft;
-  scrollLeft = carousel.scrollLeft;
-});
-
-carouselWrapper.addEventListener('mouseleave', () => {
-  isDown = false;
-});
-
-carouselWrapper.addEventListener('mouseup', () => {
-  isDown = false;
-});
-
-carouselWrapper.addEventListener('mousemove', (e) => {
-  if (!isDown) return;
-  e.preventDefault();
-  const x = e.pageX - carouselWrapper.offsetLeft;
-  const walk = (x - startX) * 3; // Adjust speed
-  carousel.scrollLeft = scrollLeft - walk;
-});
+// Call the function with the sample data
+updateDogProfile(dogData);

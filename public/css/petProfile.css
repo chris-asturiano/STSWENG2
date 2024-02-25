@@ -1,4 +1,7 @@
 /* Back to Results */
+body{
+  background-color: #F5F5F5 ;
+}
 .back-to-results {
     display: inline-block;
     color: black;
@@ -24,6 +27,7 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
+    
   }
   
   .profile-container {
