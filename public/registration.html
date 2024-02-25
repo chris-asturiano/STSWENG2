@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registration Form</title>
+<link rel="stylesheet" href="css/registration_style.css">
+</head>
+<body>
+<div class="registration-container">
+  <div class="registration-title">Find your Furever Partner.</div>
+  <form class="registration-form" action="registration_form.html">
+    <label class="option-container">
+      I am...
+      <div class="option">
+        <input type="radio" id="adopter" name="role" value="adopter" required>
+        <span class="label-text">an adopter!</span>
+        <span class="option-description">Find a potential animal companion.</span>
+      </div>
+      <div class="option">
+        <input type="radio" id="adoptee" name="role" value="adoptee" required>
+        <span class="label-text">an adoptee!</span>
+        <span class="option-description">Post about your animals and help them find new homes.</span>
+      </div>
+    </label>
+    <button type="submit">Continue</button>
+  </form>
+  <div class="login-link">
+    Already have an account? <a href="login.html">Login</a>
+  </div>
+</div>
+<div class="footer-logo"></div>
+<!-- <script src="js/validateForm.js"></script> -->
+</body>
+</html>
