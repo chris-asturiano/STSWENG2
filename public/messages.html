@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login Form</title>
+<link rel="stylesheet" href="css/messages_style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanuman:wght@700&family=Inria+Sans&family=Junge&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="return-container">
+        <a href="petSearch.html" class="back-to-results">
+          <img src="assets/arrow.png" alt="arrow">
+          <h3>Back To Results</h3>
+        </a>
+    </div>
+    <div class="messaging-main">
+        <div class="chat-with-us">
+            <h1>Chat with us!</h1>
+            <img src="assets/paw_icon.png">
+        </div>
+        <div class="splitter">
+            <div class="previous-chat">
+                <div class="head"><h3>Previous Chats</h3></div>
+                <div class="chat-manager">
+                    <div class="chat">Chat 1</div> <!-- TEMPORARY, try to dynamically fetch these thangs-->
+                    <div class="chat">Chat 2</div>
+                    <div class="chat">Chat 3</div>
+                    <div class="chat">Chat 4</div>
+                    <div class="chat">Chat 5</div>
+                    <div class="chat">Chat 6</div>
+                    <div class="chat">Chat 7</div>
+                    <div class="chat">Chat 8</div>
+                    <div class="chat">Chat 9</div>
+                    <div class="chat">Danteh</div>
+                    <div class="chat">Chat 11</div>
+                    <div class="chat">Chat 12</div>
+                    <div class="chat">Chat 13</div>
+                </div>
+            </div>
+            <div class="current-chat">
+                <div class="current-chat-contact"><h3> Chat 2 </h3></div> <!-- same here, if no contacts yet, have it be like a default text or something-->
+                <div class="current-chat-details">
+                    <!-- dynamic!! more code!! mongodb!! -->
+                    <div class="Kennel_msg"> Absolutely! Would you like to take him now? Or do you have any other questions? </div>
+                    <div class="Adopter_msg"> Lorem Ipsum </div>
+                    <div class="Adopter_msg"> The Fault lies with you, Ishmael!!  </div>
+                    <div class="Adopter_msg"> Lorem Ipsum Dona Nobis Pacem Dona Nobis Pacem Dona Nobis Pacem </div>
+                    <div class="Adopter_msg"> Lorem Ipsum Dona Nobis Pacem Dona Nobis Pacem Dona Nobis Pacem Testing Scrollability</div>
+                    <div class="Adopter_msg"> Lorem Ipsum Dona... </div>
+                    <div class="Kennel_msg"> ...Are you okay? </div>
+                    <!-- Note for later, have colors n stuff switched maybe, when user is a kennel or an adopter wise-->
+                </div> <!-- chat deets!-->
+                <div class="current-chat-input-container">
+                    <button class="attachments">File</button>
+                    <textarea maxlength="500" placeholder="Message Furever Partner..."></textarea> <!-- Maximum of 500 characters, for now -->
+                    <button class="send-button">Send</button>
+                </div> <!-- input for chatting-->
+            </div>
+        </div>
+    </div>
+</body>
+</html>

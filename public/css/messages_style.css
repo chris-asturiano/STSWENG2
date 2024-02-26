@@ -1,0 +1,205 @@
+body {
+  background-color:#F5F5F5;
+  padding-left:5%;
+  }
+  
+  .junge-regular {
+    font-family: "Junge", cursive;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+
+  .inria-sans-regular {
+    font-family: "Inria Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .hanuman-bold {
+    font-family: "Hanuman", serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+
+  .return-container {
+    display: inline-block;
+    text-align: left;
+    z-index: 1; 
+  }
+
+  .back-to-results h3 {
+    display: inline-block; 
+    vertical-align: middle; 
+    margin-left: 10px; 
+    font-size: 20px;
+    color: black;
+    font-family: "Hanuman", serif;
+    padding-bottom: 10px;
+  }
+
+  .return-container img {
+    width:20px; /*viewport width*/
+    height: auto;
+    vertical-align: middle;
+    padding-bottom: 15px;
+    text-align: right;
+  }
+
+  .messaging-main {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    height: 80vh;
+    border: 5px solid black;
+    border-radius: 5px;
+    background-color: white;
+    min-width: 900px; /*so the previous chat doesnt get squished for now*/
+    min-height: 500px;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .chat-with-us{
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    border-bottom:5px solid black;
+  }
+
+  .chat-with-us img{
+    width:3%; /*viewport width*/
+    min-width: 25px;
+    max-width: 40px;
+    vertical-align: middle;
+    padding-left: 10px;
+  }
+
+  .splitter {
+    flex:1;
+    display:flex;
+  }
+
+  .previous-chat {
+    flex: 2;
+    display: inline;
+    font-size: 20px;
+    height: auto;
+    align-items: center;
+  }
+
+  .head {
+    flex: 2;
+    border-bottom: 3px solid black;
+    text-align: center;
+    height: auto;
+  }
+
+  .chat-manager {
+    overflow-y: auto;
+    max-height: calc(80vh - 120px);
+  }
+
+  .chat {
+    padding: 15px;
+  }
+
+  .current-chat {
+    flex: 8;
+    font-size: 20px;
+    width: 80%;
+    border-left: 5px solid black;
+  }
+
+  .current-chat-contact {
+    flex: 8;
+    border-bottom: 3px solid black;
+    text-align: left;
+    height: auto;
+    padding-left: 10px;
+  }
+
+  .head h3,
+  .current-chat-contact h3{
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+
+  .current-chat-details {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    overflow-y: auto;
+    max-height: calc(80vh - 250px);
+    width: auto;
+  }
+
+  .Kennel_msg {
+    background-color: #bcaec4;
+    margin: 10px;
+    padding: 10px;
+    width: fit-content;
+    max-width: 50%;
+    border-radius: 10px;
+  }
+  .Adopter_msg {
+    background-color: #E2E1E2;
+    margin: 10px;
+    padding: 10px;
+    width: fit-content;
+    max-width: 50%;
+    border-radius: 10px;
+    align-self: flex-end;
+  }
+
+  .current-chat-input-container {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-top: 3px solid black;
+    width: auto;
+    position: sticky;
+    bottom:0;
+    background-color: white;
+  }
+
+  .attachments {
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  input[type="text"] {
+    flex:1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    overflow-wrap: break-word;
+  }
+
+  .send-button {
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  textarea {
+    flex: 1;
+    padding: 8px;
+    border: none;
+    background-color: #fdfdfd;
+    border-radius: 4px;
+    font-size: 25px;
+    max-height: 50px;
+    overflow-wrap: break-word; 
+    resize: none; 
+  }
+
+  /*thissa messy css, def a better way than this - pierre*/
