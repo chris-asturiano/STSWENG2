@@ -1,0 +1,52 @@
+:root {
+    --background-color: #f5f5f5;
+    --violet: #6E2A7E;
+    --lavender: #C7BCD3;
+    --sky-blue: #5E80C4;
+    --dark-blue: #23456C;
+    --opaque: #00000077; /* Black at 50% opacity */
+}
+
+body {
+    background-color: var(--background-color);
+    display: block;
+    height: 100vh;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .junge-regular {
+    font-family: "Junge", cursive;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+
+  *, .inria-sans-regular {
+    font-family: "Inria Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .hanuman-bold {
+    font-family: "Hanuman", serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+
+  .button {
+    background-color: var(--sky-blue);
+    font-size: 1em;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  a:visited {
+    color: black;
+  }
+
+  textarea:focus, input:focus {
+    outline: none;
+  }
