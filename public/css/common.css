@@ -50,3 +50,9 @@ body {
   textarea:focus, input:focus {
     outline: none;
   }
+
+  .slogan {
+    font-size: 75px;
+    margin-top: 10vh;
+    margin-bottom: 5vh;
+  }
