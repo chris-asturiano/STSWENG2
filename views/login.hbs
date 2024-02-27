@@ -1,0 +1,21 @@
+<head>
+    <link rel="stylesheet" href="/css/login_style.css">
+</head>
+
+{{> preheader}}
+
+<p class="junge-regular login-title">Find your <br> Furever Partner.</p>
+
+<div class="login-container">
+  <form class="login-form" method="post" action="/login"> <!-- action="/login" -->
+    <div class="form-field">
+    <label for="username">Username</label><br>
+    <input type="text" name="username" required>
+    </div>
+    <div class="form-field">
+    <label for="password">Password</label><br>
+    <input type="password" name="password" required>
+    </div>
+    <input class="button hanuman-bold" type="submit" value="Login">
+  </form>
+</div>
