@@ -12,9 +12,10 @@ router.get('/', async (req, res)=>{
     }
 });
 
-router.post('/login', (req, res) => {
+router.post('/login', (req, res) => {// /login_route/login
     try {
         //if user then
+        console.log('Yep loggin in')
         res.redirect('/petSearch.html');
         //else go back, than error????
         

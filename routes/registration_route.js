@@ -3,8 +3,11 @@ const router = Router();
 
 //also require like database stuffs?? idk
 
-router.get('/', async (req, res)=>{ 
+const User = require('../database/schemas/User');
+// /registration_route/
+router.get('/', async (req, res)=>{ // /registration_route
     try {
+        console.log('bruh')
         res.render('registration',{title: "Registration"});
     } catch (err) {
         console.error('Error fetching user:', err);
