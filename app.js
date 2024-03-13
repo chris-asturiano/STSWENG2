@@ -6,7 +6,7 @@ const app = express();
 
 app.use(express.static('public')); //styles??? I'm just checkin out old code
 app.use(express.json()); //middleware to parse JSON bodies, currently for registration->r_form
-app.use(express.urlencoded({extended:true}));//more middle ware for URL-encoded bodies
+app.use(express.urlencoded({ extended:true }));//more middle ware for URL-encoded bodies
 
 //Routes
 const regisRoute = require('./routes/registration_route')
@@ -30,7 +30,7 @@ app.get('/', (req, res)=> {
 
 // Start the server
 const port = process.env.PORT || 3000;
-app.listen(port, () => console.log(`Server listening on port ${port}`));
+app.listen(port, () => {console.log(`Server listening on port ${port}`)});
 
 // ctrl + c in terminal to stop
 
