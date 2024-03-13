@@ -9,7 +9,7 @@ router.get('/', async (req, res) => {
         const role = req.query.role;
         console.log('bruh: ', role)
         // Render the registration form view with the role information
-        res.render('registration_form', { title: "Registration Form"});
+        res.render('registration_form', { title: "Registration Form", role: role});
     } catch (err) {
         console.error('Error rendering registration form:', err);
         res.status(500).send('Internal Server Error');
@@ -20,9 +20,7 @@ router.post('/register', async (req, res) => {
     try {
         // Extract data from the request body
         
-        const { username, email, password, password_confirm } = req.body;
-        console.log(req.body);
-        console.log('Role from request body:', role);
+        const { username, email, password, password_confirm, role } = req.body;
         // Perform any necessary validation checks here
         if (password!==password_confirm){
             console.log('nuh uh')
@@ -40,8 +38,8 @@ router.post('/register', async (req, res) => {
         await newUser.save();
 
         // Redirect the user to a success page or any other appropriate action
-        console.log('redirect to login')
-        res.redirect('login');
+        console.log('redirect to login');
+        res.render('login',{title: "Login Page"});
     } catch (err) {
         console.error('Error registering user:', err);
         res.status(500).send('Internal Server Error');
