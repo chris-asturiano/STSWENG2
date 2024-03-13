@@ -39,7 +39,7 @@ router.post('/register', async (req, res) => {
 
         // Redirect the user to a success page or any other appropriate action
         console.log('redirect to login');
-        res.render('login',{title: "Login Page"});
+        res.redirect('/login_route');
     } catch (err) {
         console.error('Error registering user:', err);
         res.status(500).send('Internal Server Error');
