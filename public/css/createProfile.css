@@ -1,9 +1,36 @@
+input[type="text"], input[type="password"], textarea {
+  border: none;
+  outline: none;
+  border-bottom: 2px solid black; 
+}
+
 #head {
     height: min-content;
     width: min(1300px, 90vw);
     margin: 5vh auto;
     border: 3px solid var(--dark-blue);
-    padding: 10px 15px;
+    display: flex;
+    justify-content: center;
+  }
+  #head-left {
+    position: relative;
+    left: 0px;
+    margin: 3rem 5rem;
+  }
+  #head-left p {
+    text-align: left; 
+    margin-bottom: 10px;
+    margin-top: 0;
+  }
+  #head-left input {
+    width: 150%;
+  }
+  #head-right {
+    height: auto;
+    position: relative;
+    right: 0px;
+    top: 2rem;
+    margin: 3rem 5rem;
   }
 
 .dropdowns {
