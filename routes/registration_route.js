@@ -7,7 +7,7 @@ const User = require('../database/schemas/User');
 // /registration_route/
 router.get('/', async (req, res)=>{ // /registration_route
     try {
-        console.log('bruh')
+        console.log('1st phase registration')
         res.render('registration',{title: "Registration"});
     } catch (err) {
         console.error('Error fetching user:', err);

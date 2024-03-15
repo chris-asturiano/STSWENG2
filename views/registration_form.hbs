@@ -4,7 +4,9 @@
 </head>
 
 <p class="junge-regular slogan">Find your <br> Furever Partner.</p>
-
+{{#if error}}
+  <p id="error-message" style="color: red;">{{error}}</p>
+{{/if}}
   <div class="registration-container">
     <form class="registration-form" action="/registration_form_route/register" method="post">
       <div class="form-field">
@@ -29,3 +31,9 @@
   </div>
 
 <a href="/login_route" class="login-link">Already have an account? <u style="color: var(--dark-blue);">Login</u> </a>
+
+<script>
+  function hideErrorMessage() {
+    document.getElementById('error-message').style.display = 'none';
+  }
+</script>

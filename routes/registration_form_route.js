@@ -7,7 +7,7 @@ router.get('/', async (req, res) => {
     try {
         // Retrieve the role from the query parameters
         const role = req.query.role;
-        console.log('bruh: ', role)
+        console.log('role: ', role)
         // Render the registration form view with the role information
         res.render('registration_form', { title: "Registration Form", role: role});
     } catch (err) {
@@ -26,6 +26,17 @@ router.post('/register', async (req, res) => {
             console.log('nuh uh')
             return res.render('registration_form', { title: "Registration Form", error: "Passwords do not match"});
         }
+        //error will show one at a time
+        const existingUser = await User.findOne({ username });
+        if (existingUser) {
+            return res.render('registration_form', { title: "Registration Form", error: "Username is already taken" });
+        }
+        //PASSWORD IS NOT ENCRYPTED ATM
+        const existingEmail = await User.findOne({ email });
+        if (existingEmail) {
+            return res.render('registration_form', { title: "Registration Form", error: "Email is already registered" });
+        }
+
         // Create a new user object
         const newUser = new User({
             username,
