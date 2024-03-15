@@ -1,0 +1,39 @@
+<head>
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/registration_form_style.css">
+</head>
+
+<p class="junge-regular slogan">Find your <br> Furever Partner.</p>
+{{#if error}}
+  <p id="error-message" style="color: red;">{{error}}</p>
+{{/if}}
+  <div class="registration-container">
+    <form class="registration-form" action="/registration_form_route/register" method="post">
+      <div class="form-field">
+        <label for="username">Username</label><br>
+        <input type="text" id="username" name="username" required>
+      </div>
+      <div class="form-field">
+        <label for="email">Email Address</label><br>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-field">
+        <label for="password">Password</label><br>
+        <input type="password" id="password" name="password" required>
+      </div>
+      <div class="form-field">
+        <label for="password_confirm">Confirm Password</label><br>
+        <input type="password" id="password" name="password_confirm" required>
+      </div>
+      <button class="button hanuman-bold" type="submit">Register</button>
+      <input type="hidden" name="role" value="{{role}}">
+    </form>
+  </div>
+
+<a href="/login_route" class="login-link">Already have an account? <u style="color: var(--dark-blue);">Login</u> </a>
+
+<script>
+  function hideErrorMessage() {
+    document.getElementById('error-message').style.display = 'none';
+  }
+</script>

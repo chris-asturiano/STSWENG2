@@ -1,0 +1,31 @@
+<head>
+    <link rel="stylesheet" href="/css/login_style.css">
+</head>
+
+<p class="junge-regular slogan">Find your <br> Furever Partner.</p>
+{{#if error}}
+  <p id="error-message" style="color: red;">{{error}}</p>
+{{/if}}
+<div class="login-container">
+  <form class="login-form" method="post" action="/login_route/login" oninput="hideErrorMessage()"> <!-- action="/login" -->
+    <div class="form-field">
+    <label for="username">Username</label><br>
+    <input type="text" id="username" name="username" required>
+    </div>
+    <div class="form-field">
+    <label for="password">Password</label><br>
+    <input type="password" id="password" name="password" required>
+    </div>
+    <input class="button hanuman-bold" type="submit" value="Login">
+  </form>
+</div>
+
+
+
+<a href="/registration_route" class="register-link">Don't have an account yet? <u style="color: var(--dark-blue);">Register</u> </a>
+
+<script>
+  function hideErrorMessage() {
+    document.getElementById('error-message').style.display = 'none';
+  }
+</script>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pet Profile</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hanuman:wght@700&family=Inria+Sans&family=Junge&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./css/common.css">
+  <link rel="stylesheet" href="./css/createProfile.css">
+</head>
+<body>
+    <form action="" method="post" class="pet-form">
+        <div id="head">
+            <div id="head-left">
+                <p class="hanuman-bold" style="font-size: 40px;">Who is this<br> new friend?</p><br>
+                <input type="text" name="petName" id="petName" placeholder="Enter a name...">
+            </div>
+            <div id="head-right">
+                <div class="dropdowns">
+                    <!-- Row 1 -->
+                    <div class="row">
+                      <!-- Column 1 for species dropdown -->
+                      <div class="column">
+                        <label for="speciesDropdown">Species:</label>
+                        <select id="speciesDropdown">
+                          <option value="dog">Dog</option>
+                          <option value="cat">Cat</option>
+                          <option value="bird">Bird</option>
+                        </select>
+                      </div>
+                      <!-- Column 2 for breed dropdown -->
+                      <div class="column">
+                        <label for="breedDropdown">Breed:</label>
+                        <select id="breedDropdown">
+                        </select>
+                      </div>
+                    </div>
+                    <!-- Row 2 -->
+                    <div class="row">
+                      <!-- Column 1 for age dropdown -->
+                      <div class="column">
+                        <label for="ageDropdown">Age:</label>
+                        <select id="ageDropdown">
+                          <option value="below-1-year">Below 1 year</option>
+                          <!-- Options for ages 1 to 15 will be added dynamically by JavaScript -->
+                        </select>
+                      </div>
+                      <!-- Column 2 for size dropdown -->
+                      <div class="column">
+                        <label for="sizeDropdown">Size:</label>
+                        <select id="sizeDropdown">
+                          <option value="toy">Toy</option>
+                          <option value="small">Small</option>
+                          <option value="medium">Medium</option>
+                          <option value="large">Large</option>
+                          <option value="extra-large">Extra Large</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+        </div>
+        <div id="body">
+            <div id="textareas">
+                <div class="textarea-field">
+                    <label for="behaveNcharac" class="hanuman-bold">Behaviors & Characteristics</label> <br>
+                <textarea name="behaveNcharac" id="" cols="30" rows="10">Type some stuff...</textarea>
+                </div>
+                <div class="textarea-field">
+                    <label for="background" class="hanuman-bold">Background</label> <br>
+                <textarea name="background" id="" cols="30" rows="10">Type some stuff...</textarea>
+                </div>
+            </div>
+            <div id="buttons">
+                <input type="submit" value="Create" id="createBtn" class="hanuman-bold button">
+                <input type="button" value="Cancel" id="cancelBtn" class="hanuman-bold button">
+            </div>
+        </div>
+    </form>
+
+    <script src="dropdownFill.js"></script>
+</body>
