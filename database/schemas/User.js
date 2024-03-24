@@ -16,7 +16,8 @@ const UserSchema = new mongoose.Schema({
   role: {
     type: String,
     required: true,
-    enum: ['adopter', 'kennel'], // maybe make an admin role, just a passing note
+    // maybe make an admin role, just a passing note
+    enum: ['adopter', 'kennel'],
   },
 });
 
