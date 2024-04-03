@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registration Form</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanuman:wght@700&family=Inria+Sans&family=Junge&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/registration_style.css">
+</head>
+<body>
+<p class="junge-regular slogan">Find your <br> Furever Partner.</p>
+
+<div class="registration-container">
+  <form class="registration-form" action="registration_form.html">
+    <label class="option-container">
+      <p class="hanuman-bold" id="label-text">I am...</p>
+      <div class="option">
+        <div class="option-radio">
+          <input type="radio" id="adopter" name="role" value="adopter" required>
+        </div>
+        <div class="option-label">
+          <span class="label-text">an adopter!</span>
+          <span class="option-description">Find a potential animal companion.</span>
+        </div>
+      </div>
+      <div class="option">
+        <div class="option-radio">
+          <input type="radio" id="adoptee" name="role" value="adoptee" required>
+        </div>
+        <div class="option-label">
+          <span class="label-text">an adoptee!</span>
+          <span class="option-description">Post about your animals and help them find new homes.</span>
+        </div>
+      </div>
+    </label>
+    <button class="hanuman-bold button" type="submit">Continue</button>
+  </form>
+</div>
+
+<a href="login.html" class="login-link">Already have an account? <u style="color: var(--dark-blue);">Login</u> </a>
+<!-- <script src="js/validateForm.js"></script> -->
+</body>
+</html>

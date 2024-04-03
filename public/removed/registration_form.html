@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registration Form</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanuman:wght@700&family=Inria+Sans&family=Junge&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/registration_form_style.css">
+</head>
+<body>
+  <p class="junge-regular slogan">Find your <br> Furever Partner.</p>
+
+  <div class="registration-container">
+    <form class="registration-form">
+      <div class="form-field">
+        <label for="username">Username</label><br>
+        <input type="text" name="username" required>
+      </div>
+      <div class="form-field">
+        <label for="email">Email Address</label><br>
+        <input type="email" name="email" required>
+      </div>
+      <div class="form-field">
+        <label for="password">Password</label><br>
+        <input type="password" name="password" required>
+      </div>
+      <div class="form-field">
+        <label for="password_confirm">Confirm Password</label><br>
+        <input type="password" name="password_confirm" required>
+      </div>
+      <button class="button hanuman-bold" type="submit">Register</button>
+    </form>
+  </div>
+  
+  <a href="login.html" class="login-link">Already have an account? <u style="color: var(--dark-blue);">Login</u> </a>
+
+  <div class="footer-logo"></div>
+</div>
+</body>
+</html>

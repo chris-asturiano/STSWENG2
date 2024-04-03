@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login Form</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanuman:wght@700&family=Inria+Sans&family=Junge&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/login_style.css">
+</head>
+<body>
+<p class="junge-regular slogan">Find your <br> Furever Partner.</p>
+
+<div class="login-container">
+  <form class="login-form" method="post" action="/login">
+    <div class="form-field">
+    <label for="username">Username</label><br>
+    <input type="text" name="username" required>
+    </div>
+    <div class="form-field">
+    <label for="password">Password</label><br>
+    <input type="password" name="password" required>
+    </div>
+    <input class="button hanuman-bold" type="submit" value="Login">
+  </form>
+</div>
+
+<a href="registration.html" class="register-link">Don't have an account yet? <u style="color: var(--dark-blue);">Register</u> </a>
+</body>
+</html>

@@ -11,15 +11,21 @@ app.use(express.json());
 // more middle ware for URL-encoded bodies
 app.use(express.urlencoded({extended: true}));
 
-// Routes
-const regisRoute = require('./routes/registration_route');
-const rformRoute = require('./routes/registration_form_route');
-const loginRoute = require('./routes/login_route');
+//Routes
+const regisRoute = require('./routes/registration_route')
+const rformRoute = require('./routes/registration_form_route')
+const loginRoute = require('./routes/login_route')
+// const petSeRoute = require('./routes/petSearch_route')
+// const petPrRoute = require('./routes/petProfile_route')
+// const messaRoute = require('./routes/messages_route')
 
-// Routes - Pages
-app.use('/registration_route', regisRoute);
-app.use('/login_route', loginRoute);
-app.use('/registration_form_route', rformRoute);
+//Routes - Pages
+app.use('/registration_route', regisRoute)
+app.use('/login_route', loginRoute)
+app.use('/registration_form_route', rformRoute)
+// app.use('/petSearch_route', petSeRoute)
+// app.use('/petProfile_route', petPrRoute)
+// app.use('/messages_route', messaRoute)
 
 app.engine('hbs', exphbs.engine({extname: 'hbs'}));
 app.set('view engine', 'hbs');// set default file extenstion for views as .hbs

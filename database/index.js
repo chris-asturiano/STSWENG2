@@ -1,5 +1,6 @@
-const mongoose = require('mongoose');
-const User = require('./schemas/User');
+const mongoose = require('mongoose')
+const User = require('./schemas/User')
+const Pet = require('./schemas/Pet')
 
 // Connect to MongoDB
 mongoose
