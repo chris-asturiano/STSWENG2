@@ -23,7 +23,7 @@ router.post('/login', async function(req, res){// /login_route/login
             if (result){
                 console.log('Login Success');
                 req.session.userId = login_user._id;
-                res.redirect('/petSearch_route');
+                res.redirect('/profiles');
             } else {
                 console.log('Login Fail');
                 return res.render('login', { error: 'Invalid password', title: "Login Page", has_style: "login_style" });
