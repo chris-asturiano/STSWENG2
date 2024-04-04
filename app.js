@@ -50,3 +50,5 @@ app.use((req, res, next)=>{// should spy n see the get stuff but idk what???
   console.log(`${req.method}:${req.url}`);// log method and url, GET:/users
   next();
 });
+
+module.exports = {app: app}; // export app for testing
