@@ -3,6 +3,7 @@ const app = require('../app').app;
 const User = require('../database/schemas/User');
 
 describe('POST /register', () => {
+    app.listen(3002);
   it('should return error if passwords do not match', async () => {
     const userData = {
       username: 'testuser1',
