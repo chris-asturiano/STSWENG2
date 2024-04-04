@@ -11,7 +11,7 @@
   },
   "scripts": {
     "start": "nodemon app.js",
-    "test": "jest --forceExit --maxWorkers=1"
+    "test": "jest --detectOpenHandles --maxWorkers=1"
   },
   "devDependencies": {
     "nodemon": "^3.1.0"
