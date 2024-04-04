@@ -83,7 +83,4 @@ describe('POST /register', () => {
     expect(response.status).toBe(302); 
     expect(response.header.location).toBe('/login_route');
   });
-  afterAll(async () => {
-    jest.restoreAllMocks();
-  });
 });
