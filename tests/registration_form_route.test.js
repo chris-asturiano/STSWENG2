@@ -5,7 +5,7 @@ const User = require('../database/schemas/User');
 describe('POST /register', () => {
   it('should return error if passwords do not match', async () => {
     const userData = {
-      username: 'testuser',
+      username: 'testuser1',
       email: 'test@example.com',
       password: 'password123',
       password_confirm: 'password456',
@@ -45,7 +45,7 @@ describe('POST /register', () => {
     jest.spyOn(User, 'findOne').mockResolvedValueOnce({ email: 'test@example.com' });
 
     const userData = {
-      username: 'testuser',
+      username: 'testuser2',
       email: 'test@example.com',
       password: 'password123',
       password_confirm: 'password123',
