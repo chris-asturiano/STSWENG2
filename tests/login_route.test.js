@@ -7,7 +7,6 @@ const { closeConnection } = require('../database');
 
 
 describe('POST /login', () => {
-  app.listen(3001);
   it('responds with redirect to /profiles on successful login', async () => {
     const fakeUser = { username: 'testuser', password: 'password'};
     
