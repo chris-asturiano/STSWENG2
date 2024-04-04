@@ -57,7 +57,7 @@ describe('POST /register', () => {
       .send(userData);
 
     expect(response.status).toBe(200); 
-    expect(response.text).toContain('Email is already registered');
+    expect(response.text).toContain('Username is already taken');
   });
 
   it('should redirect to login route if registration is successful', async () => {
