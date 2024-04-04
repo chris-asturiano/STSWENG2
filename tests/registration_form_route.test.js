@@ -42,7 +42,7 @@ describe('POST /register', () => {
 
   it('should return error if email is already registered', async () => {
     //  existing email
-    jest.spyOn(User, 'findOne').mockResolvedValueOnce({ email: 'test@example.com' });
+    jest.spyOn(User, 'findOne').mockResolvedValueOnce({username:'doesnotexist' , email: 'test@example.com' });
 
     const userData = {
       username: 'testuser2',
@@ -57,7 +57,7 @@ describe('POST /register', () => {
       .send(userData);
 
     expect(response.status).toBe(200); 
-    expect(response.text).toContain('Username is already taken');
+    expect(response.text).toContain('Email is already registered');
   });
 
   it('should redirect to login route if registration is successful', async () => {
