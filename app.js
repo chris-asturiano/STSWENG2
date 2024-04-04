@@ -15,6 +15,8 @@ app.use(express.urlencoded({extended: true}));
 const regisRoute = require('./routes/registration_route')
 const rformRoute = require('./routes/registration_form_route')
 const loginRoute = require('./routes/login_route')
+
+const petPrRoute = require('./routes/profiles')
 // const petSeRoute = require('./routes/petSearch_route')
 // const petPrRoute = require('./routes/petProfile_route')
 // const messaRoute = require('./routes/messages_route')
@@ -43,7 +45,7 @@ const port = process.env.PORT || 3000;
 //   console.log(`Server listening on port ${port}`);
 // });
 
-// app listen without the console log
+
 app.listen(port);
 
 // ctrl + c in terminal to stop

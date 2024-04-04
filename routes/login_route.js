@@ -3,6 +3,8 @@ const express = require('express');
 const router = express.Router();
 const User = require('../database/schemas/User');
 
+
+
 // Also require like database stuffs for MongoDB, put here
 
 router.get('/', async (req, res)=>{ 
@@ -18,15 +20,17 @@ router.post('/login', async function(req, res){// /login_route/login
     try {
         //logic for checkin if user is adopter/kennel
         const login_user = await User.findOne({ username: req.body.username })
+        
         if(login_user){
             const result = req.body.password === login_user.password;
             if (result){
                 console.log('Login Success');
                 req.session.userId = login_user._id;
-                res.redirect('/petSearch_route');
+                res.redirect('/profiles');
             } else {
                 console.log('Login Fail');
                 return res.render('login', { error: 'Invalid password', title: "Login Page", has_style: "login_style" });
+               
             }
         } else {
             console.log('Login Fail')
