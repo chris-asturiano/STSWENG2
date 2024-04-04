@@ -25,7 +25,7 @@ router.post('/login', async function(req, res){// /login_route/login
             const result = req.body.password === login_user.password;
             if (result){
                 console.log('Login Success');
-                req.session.userId = login_user._id;
+                // req.session.userId = login_user._id;
                 res.redirect('/profiles');
             } else {
                 console.log('Login Fail');
