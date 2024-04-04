@@ -4,6 +4,7 @@ const Pet = require('../database/schemas/Pet');
 
 router.get('/', async (req, res) => {
     try {
+        if (!req.session.userId) { res.redirect('/login_route'); }
         const pets = await Pet.find({}).lean().exec();
         res.render('profiles', { title: "Pet Profiles", pets: pets });
     } catch (err) {

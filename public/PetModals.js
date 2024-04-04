@@ -12,7 +12,7 @@ $(document).ready(function() {
         unhover($(this));
     });*/
     
-    $("#interactables").delegate(".interact", "click", async function() { 
+    $(".interactables").delegate(".interact", "click", async function() { 
         var id = $(this).attr('id');
         
         const url = window.location.href + '/' + id;

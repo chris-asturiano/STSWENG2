@@ -22,7 +22,7 @@
                 <div class="card-body">
                 <h5 class="card-title">{{this.name}}</h5>
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <div id="interactables">
+                    <div class="interactables">
                         <button type="button" data-bs-toggle="modal" data-bs-target="#petModal" class="modal-btn">
                             <div class="interact" id="{{this.petcode}}">View Pet</div>
                         </button>
@@ -59,6 +59,11 @@
         height: 20rem;
         object-fit: cover;
         object-position: 50%;
+    }
+    .carousel-item img {
+        height: 30ch;
+        object-fit: cover;
+        object-position: 50% 50%;
     }
 </style>
 

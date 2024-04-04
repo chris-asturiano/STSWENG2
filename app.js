@@ -22,7 +22,7 @@ const loginRoute = require('./routes/login_route')
 
 // const petSeRoute = require('./routes/petSearch_route')
 const petPrRoute = require('./routes/profiles')
-// const messaRoute = require('./routes/messages_route')
+const logouRoute = require('./routes/logout')
 
 //Routes - Pages
 app.use('/registration_route', regisRoute)
@@ -31,7 +31,7 @@ app.use('/registration_form_route', rformRoute)
 
 // app.use('/petSearch_route', petSeRoute)
 app.use('/profiles', petPrRoute)
-// app.use('/messages_route', messaRoute)
+app.use('/logout', logouRoute)
 
 app.engine('hbs', exphbs.engine({extname: 'hbs'}));
 app.set('view engine', 'hbs');// set default file extenstion for views as .hbs
