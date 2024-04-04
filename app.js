@@ -39,9 +39,12 @@ app.get('/', (req, res)=> {
 
 // Start the server
 const port = process.env.PORT || 3000;
-app.listen(port, () => {
-  console.log(`Server listening on port ${port}`);
-});
+// app.listen(port, () => {
+//   console.log(`Server listening on port ${port}`);
+// });
+
+// app listen without the console log
+app.listen(port);
 
 // ctrl + c in terminal to stop
 
