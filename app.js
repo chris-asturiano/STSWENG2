@@ -11,12 +11,20 @@ app.use(express.json());
 // more middle ware for URL-encoded bodies
 app.use(express.urlencoded({extended: true}));
 
+app.use(session({ //session baybe
+  secret: 'secretest-key', //maybe make something else
+  resave: false,
+  saveUninitialized: true
+})); //session expires when closed browser, add cookie->Max age if we want it timed
+
+
 //Routes
 const regisRoute = require('./routes/registration_route')
 const rformRoute = require('./routes/registration_form_route')
 const loginRoute = require('./routes/login_route')
 
 const petPrRoute = require('./routes/profiles')
+
 // const petSeRoute = require('./routes/petSearch_route')
 // const petPrRoute = require('./routes/petProfile_route')
 // const messaRoute = require('./routes/messages_route')
@@ -25,6 +33,7 @@ const petPrRoute = require('./routes/profiles')
 app.use('/registration_route', regisRoute)
 app.use('/login_route', loginRoute)
 app.use('/registration_form_route', rformRoute)
+app.use('/profiles', petPrRoute)
 // app.use('/petSearch_route', petSeRoute)
 // app.use('/petProfile_route', petPrRoute)
 // app.use('/messages_route', messaRoute)
