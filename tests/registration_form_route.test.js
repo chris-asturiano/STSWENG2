@@ -3,7 +3,6 @@ const app = require('../app').app;
 const User = require('../database/schemas/User');
 
 describe('POST /register', () => {
-    app.listen(3002);
   it('should return error if passwords do not match', async () => {
     const userData = {
       username: 'testuser1',
@@ -83,5 +82,8 @@ describe('POST /register', () => {
 
     expect(response.status).toBe(302); 
     expect(response.header.location).toBe('/login_route');
+  });
+  afterAll(async () => {
+    app.listen(3000).close();
   });
 });
