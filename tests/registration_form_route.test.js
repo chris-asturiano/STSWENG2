@@ -22,7 +22,7 @@ describe('POST /register', () => {
 
   it('should return error if username is already taken', async () => {
     //  existing user
-    jest.spyOn(User, 'findOne').mockResolvedValueOnce({ username: 'existingUser' });
+    await User.create({ username: 'existingUser', password: 'password', email: 'f98dajfio@gmail.com', role: 'adopter' });
 
     const userData = {
       username: 'existingUser',
@@ -38,11 +38,14 @@ describe('POST /register', () => {
 
     expect(response.status).toBe(200); 
     expect(response.text).toContain('Username is already taken');
+    
+    // delete existingUser
+    await User.deleteOne({ username: 'existingUser' });
   });
 
   it('should return error if email is already registered', async () => {
     //  existing email
-    jest.spyOn(User, 'findOne').mockResolvedValueOnce({username:'doesnotexist' , email: 'test@example.com' });
+    await User.create({ username: 'existingUser', password: 'password', email: 'test@example.com', role: 'adopter' });
 
     const userData = {
       username: 'testuser2',
@@ -58,6 +61,7 @@ describe('POST /register', () => {
 
     expect(response.status).toBe(200); 
     expect(response.text).toContain('Email is already registered');
+    await User.deleteOne({ username: 'existingUser' });
   });
 
   it('should redirect to login route if registration is successful', async () => {
