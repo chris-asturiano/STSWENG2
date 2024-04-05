@@ -3,12 +3,12 @@
 <div class="container">
     <div class="row">
         <div id="searchForm" class="col-4">
-            <p class="float-start">Search Filters:</p><br>
-            <form action="" method="post">
+            <p class="text-start">Search Filters:</p><br>
+            <form method="get" action="/search" id="searchForm">
                 <div class="mb-3">
                     <label for="speciesSelect" class="form-label">Species</label>
                     <select name="species" id="speciesSelect" class="form-select form-select-lg">
-                        <option selected>Any Species</option>
+                        <option value="DNM" selected>Any Species</option>
                         <option value="doggo">Dogs</option>
                         <option value="hissy">Cats</option>
                         <option value="borb">Birds</option>
@@ -16,17 +16,38 @@
                     </select> 
                 </div>
                 <div class="mb-3">
-                    <label for="" class="form-label"></label>
-                    <select name="" id="" class="form-select form-select-lg">
-                        <option selected>Does not matter</option>
-                        <option value="">1</option>
-                        <option value="">2</option>
+                    <label for="maintSelect" class="form-label">Maintenance</label>
+                    <select name="maintenance" id="maintSelect" class="form-select form-select-lg">
+                        <option value="DNM" selected>Does not matter</option>
+                        <option value="high">High Maintenance</option>
+                        <option value="low">Self-Sufficient</option>
                     </select> 
                 </div>
+                <div class="mb-3">
+                    <label for="temperSelect" class="form-label">Temperament</label>
+                    <select name="temper" id="temperSelect" class="form-select form-select-lg">
+                        <option value="DNM" selected>Does not matter</option>
+                        <option value="playful">Playful</option>
+                        <option value="lax">Lax</option>
+                    </select> 
+                </div>
+                <button class="btn btn-primary mb-3" id="searchButton">Search</button>
             </form>
         </div>
-        <div id="resultContainer" class="col-8">
-            <p class="float-start">Results</p>
+        <div class="col-8">
+            <p class="text-start">Results</p>
+            <div class="row" id="resultContainer">
+                {{#unless results}} 
+                    <p>Nothing here! ヾ(•ω•`)o</p>
+                {{else}}
+                    {{#each results}}
+                    <div class="card g-col-4" style="width: 18rem;">
+                        <img src="assets/pet_gallery/{{this.petcode}}_img0.png" class="card-img-top" alt="{{this.petcode}}_card.png">
+                        <div class="card-body"><h5 class="card-title">{{this.name}}</h5></div>
+                    </div>
+                    {{/each}}
+                {{/unless}}
+            </div>
         </div>
     </div>
 </div>

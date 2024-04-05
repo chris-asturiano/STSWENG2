@@ -56,3 +56,10 @@ body {
     margin-top: 10vh;
     margin-bottom: 5vh;
   }
+
+  .card-img-top {
+    margin-top: 0.5rem;
+    height: 20rem;
+    object-fit: cover;
+    object-position: 50%;
+  }
