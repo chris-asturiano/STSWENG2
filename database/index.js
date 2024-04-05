@@ -4,7 +4,7 @@ const Pet = require('./schemas/Pet')
 
 // Connect to MongoDB
 mongoose
-    .connect('mongodb://127.0.0.1:27017/STSWENG')
+    .connect('mongodb://127.0.0.1:27017/STSWENG2')
     .then(() => console.log('Connected to MongoDB'))
     .catch((err) => console.error('Could not connect to MongoDB', err));
 
