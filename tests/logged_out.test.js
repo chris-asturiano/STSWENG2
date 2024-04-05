@@ -15,4 +15,12 @@ describe('Logged out tests', () => {
     expect(response.header.location).toBe('/login_route'); 
   });
 
+  it('should redirect to /login_route when trying to access /search while logged out', async () => {
+    const response = await request(app)
+        .get('/search');
+
+    expect(response.status).toBe(302); 
+    expect(response.header.location).toBe('/login_route'); 
+  });
+
 });
