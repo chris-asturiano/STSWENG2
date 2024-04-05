@@ -2,9 +2,6 @@ const request = require('supertest');
 const User = require('../database/schemas/User');
 const app = require('../app').app;
 
-
-
-
 describe('Logout test', () => {
   it('user should successfully redirect to /login_route after logging out', async () => {
     // simulate logging in first
