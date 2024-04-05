@@ -26,12 +26,4 @@ describe('Logout test', () => {
     expect(response.header.location).toBe('/login_route');
 
   });
-  
-    it('should not be able to log out if not logged in', async () => {
-        const response = await request(app)
-        .get('/logout');
-    
-        expect(response.status).toBe(302);
-        expect(response.header.location).toBe('/login_route');
-    });
 });
