@@ -46,6 +46,5 @@ describe('POST /login', () => {
     // delete the user
     await User.deleteMany({ username: 'testuser' });
     closeConnection();
-    app.listen(3000).close();
   });
 });
