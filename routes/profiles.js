@@ -6,6 +6,10 @@ router.get('/', async (req, res) => {
     try {
         if (!req.session.userId) { res.redirect('/login_route'); }
         const pets = await Pet.find({}).lean().exec();
+        pets.forEach(pet => {
+            let desc = pet.description;
+            pet.description = desc.slice(0, 80) + "...";
+        });
         res.render('profiles', { title: "Pet Profiles", pets: pets });
     } catch (err) {
         console.error('Error fetching user:', err);
