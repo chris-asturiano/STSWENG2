@@ -66,7 +66,6 @@ describe('POST /register', () => {
 
   it('should redirect to login route if registration is successful', async () => {
     //  successful registration
-    jest.spyOn(User.prototype, 'save').mockResolvedValueOnce();
 
     const userData = {
       username: 'testuser',
@@ -82,5 +81,7 @@ describe('POST /register', () => {
 
     expect(response.status).toBe(302); 
     expect(response.header.location).toBe('/login_route');
+    // delete the user
+    await User.deleteOne({ username: 'testuser' });
   });
 });
