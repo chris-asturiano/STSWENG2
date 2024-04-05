@@ -12,7 +12,7 @@ router.get('/', async (req, res) => {
         });
         res.render('profiles', { title: "Pet Profiles", pets: pets });
     } catch (err) {
-        console.error('Error fetching user:', err);
+        console.error('Error in profiles page:', err);
         res.status(500).send('Internal Server Error');
     }
 });

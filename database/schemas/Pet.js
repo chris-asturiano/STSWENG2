@@ -24,6 +24,16 @@ const PetSchema = new mongoose.Schema({
     in_gallery: {
         type: Number,
         default: 0
+    },
+    maintenance: {
+        type: String,
+        enum: ['high', 'low'],
+        required: true
+    }, 
+    temper: {
+        type: String,
+        enum: ['playful', 'lax'],
+        required: true
     }
 })
 

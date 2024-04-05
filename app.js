@@ -20,7 +20,7 @@ const regisRoute = require('./routes/registration_route')
 const rformRoute = require('./routes/registration_form_route')
 const loginRoute = require('./routes/login_route')
 
-// const petSeRoute = require('./routes/petSearch_route')
+const petSeRoute = require('./routes/search')
 const petPrRoute = require('./routes/profiles')
 const logouRoute = require('./routes/logout')
 
@@ -29,7 +29,7 @@ app.use('/registration_route', regisRoute)
 app.use('/login_route', loginRoute)
 app.use('/registration_form_route', rformRoute)
 
-// app.use('/petSearch_route', petSeRoute)
+app.use('/search', petSeRoute)
 app.use('/profiles', petPrRoute)
 app.use('/logout', logouRoute)
 

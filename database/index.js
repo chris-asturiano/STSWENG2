@@ -44,8 +44,37 @@ async function closeConnection() {
   mongoose.connection.close();
 }
 
+async function pet_populate(species, petcode, name, description, in_gallery, affection, temper) {
+  try {
+      let entry = new Pet({ species: species, petcode: petcode, name: name, description: description, in_gallery: in_gallery, affection: affection, temper: temper})
+      await entry.save()
+      console.log("Pet successfully created.")
+  } catch (e) {
+      console.log(e.message)
+  }
+}
+
+async function pet_populate_attr(petcode, maintenance, temper) {
+  try {
+    const entry = await Pet.findOne({petcode: petcode});
+
+    if (entry){
+      entry.maintenance = maintenance;
+      entry.temper = temper;
+      await entry.save()
+      console.log("Pet successfully updated.")
+    }  else  {
+      console.log("Pet does not exist :(((((")
+    }
+  } catch (e) {
+      console.log(e.message)
+  }
+}
+
 module.exports = {
   userPopulate,
   usersDelete,
   closeConnection,
+  pet_populate,
+  pet_populate_attr,
 };
