@@ -50,7 +50,9 @@ const port = process.env.PORT || 3000;
 // });
 
 // app listen without the console log
-app.listen(port);
+if (process.env.NODE_ENV !== 'test') {
+  app.listen(port);
+}
 
 // ctrl + c in terminal to stop
 

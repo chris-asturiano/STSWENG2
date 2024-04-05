@@ -11,11 +11,9 @@
   },
   "scripts": {
     "start": "nodemon app.js",
-    "test": "jest --forceExit"
+    "test": "NODE_ENV=test jest --forceExit --maxWorkers=1"
   },
   "devDependencies": {
-    "eslint": "^8.57.0",
-    "eslint-config-google": "^0.14.0",
     "nodemon": "^3.1.0"
   }
 }
