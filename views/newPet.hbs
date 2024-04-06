@@ -1,0 +1,57 @@
+{{> header}}
+
+<div style="width: 40%; margin: auto;">
+    <p class="fs-2 fw-semibold">Create a Custom Pet!</p>
+    <form method="post" action="/create_listing/custom" id="customForm">
+        <div class="mb-3">
+            <label for="speciesSelect" class="form-label">What species is it?</label>
+            <select name="species" id="speciesSelect" class="form-select">
+                <option value="" selected>Species</option>
+                <option value="doggo">Dogs</option>
+                <option value="hissy">Cats</option>
+                <option value="borb">Birds</option>
+                <option value="smol">Rodents</option>
+            </select> 
+        </div>
+        <div class="mb-3">
+            <label for="maintSelect" class="form-label">Do they need a lot of extra care?</label>
+            <select name="maintenance" id="maintSelect" class="form-select">
+                <option value="" selected>Maintenance</option>
+                <option value="high">High Maintenance</option>
+                <option value="low">Self-Sufficient</option>
+            </select> 
+        </div>
+        <div class="mb-3">
+            <label for="temperSelect" class="form-label">At home, this pet is usually...</label>
+            <select name="temper" id="temperSelect" class="form-select">
+                <option value="" selected>Temperament</option>
+                <option value="playful">Playful</option>
+                <option value="lax">Lax</option>
+            </select> 
+        </div>
+        <div class="mb-3">
+            <label for="nameInput">Pet Name</label><br>
+            <input type="text" name="name" id="nameInput" placeholder="Name your pet!" required>
+        </div>
+        <button type="submit" class="btn btn-primary mb-3" id="submitButton" disabled>Create</button>
+    </form>
+</div>
+
+<script>
+    const selects = $('.form-select');
+
+    $(document).ready(function () {
+        $('#customForm').delegate('.form-select', 'change', function () {
+            $('#submitButton').prop('disabled', true);
+            var valid_selection = true;
+            selects.each(function () {
+                if ($(this).val() == "") {
+                    valid_selection = false; return;
+                }
+            });
+
+            if (valid_selection) $('#submitButton').prop('disabled', false);
+        });
+
+    })
+</script>

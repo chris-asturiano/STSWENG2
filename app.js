@@ -23,6 +23,7 @@ const loginRoute = require('./routes/login_route')
 const petSeRoute = require('./routes/search')
 const petPrRoute = require('./routes/profiles')
 const logouRoute = require('./routes/logout')
+const newPeRoute = require('./routes/newPet')
 
 //Routes - Pages
 app.use('/registration_route', regisRoute)
@@ -31,6 +32,7 @@ app.use('/registration_form_route', rformRoute)
 
 app.use('/search', petSeRoute)
 app.use('/profiles', petPrRoute)
+app.use('/create_listing', newPeRoute)
 app.use('/logout', logouRoute)
 
 app.engine('hbs', exphbs.engine({extname: 'hbs'}));

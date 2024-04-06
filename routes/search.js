@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 
 const Pet = require('../database/schemas/Pet');
-const { search } = require('./search');
 
 router.get('/', async (req, res) => {
     try {
