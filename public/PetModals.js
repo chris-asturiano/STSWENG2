@@ -1,9 +1,7 @@
-const interactables = $(".interact");
-const modal = $("#petModal");
 //const lockedmodal = $("#lockeddoggoModal")
 
 $(document).ready(function() {
-    /*
+	/*
     $("#interactables").delegate(".interact", "mouseenter", function() {
         hover($(this));
     });
@@ -12,17 +10,17 @@ $(document).ready(function() {
         unhover($(this));
     });*/
     
-    $(".interactables").delegate(".interact", "click", async function() { 
-        var id = $(this).attr('id');
+	$('.interactables').delegate('.interact', 'click', async function() { 
+		var id = $(this).attr('id');
         
-        const url = window.location.href + '/' + id;
-        await $.get(url, function (data, status) { 
-            if (status == 404) {console.log("None Found"); return;}                  // NO PET FOUND
-            $("#petModalLabel").text(data.name);      //set modal title to Pet Name
-            $("#petInformation").html(createModalBody(data.petcode, data.in_gallery, data.description));
-        });
-    });
-    /*
+		const url = window.location.href + '/' + id;
+		await $.get(url, function (data, status) { 
+			if (status == 404) {console.log('None Found'); return;}                  // NO PET FOUND
+			$('#petModalLabel').text(data.name);      //set modal title to Pet Name
+			$('#petInformation').html(createModalBody(data.petcode, data.in_gallery, data.description));
+		});
+	});
+	/*
     $("#interactables").delegate(".locked", "click", function() {
         var id = $(this).attr('id');
         $("#unlockdoggoBtn").attr('petcode', id);
@@ -34,7 +32,7 @@ $(document).ready(function() {
         var petcode = $("#unlockdoggoBtn").attr('petcode');
         window.location.href = '/puzzle/' + petcode;
     });*/
-})
+});
 
 /*
 function hover(element) {
@@ -52,11 +50,11 @@ function unhover(element) {
 }*/
 
 function createModalBody(petcode, in_gallery, description) {
-    var carousel_items = '';
-    for (let i = 1; i < in_gallery; i++) {
-        carousel_items += `<div class="carousel-item"><img src="assets/pet_gallery/${petcode}_img${i}.png" class="d-block w-100" alt="${petcode}_img${i}.jpg"></div>`;
-    }
-    const html = `
+	var carousel_items = '';
+	for (let i = 1; i < in_gallery; i++) {
+		carousel_items += `<div class="carousel-item"><img src="assets/pet_gallery/${petcode}_img${i}.png" class="d-block w-100" alt="${petcode}_img${i}.jpg"></div>`;
+	}
+	const html = `
     <div id="carouselPet" class="carousel slide">
     <div class="carousel-inner">
       <div class="carousel-item active">
@@ -76,5 +74,5 @@ function createModalBody(petcode, in_gallery, description) {
     </div>
     <br> ${description}
     `;
-    return html;
+	return html;
 }

@@ -10,30 +10,30 @@ app.use(express.json()); //middleware to parse JSON bodies
 app.use(express.urlencoded({ extended:true }));//more middle ware for URL-encoded bodies
 
 app.use(session({ //session baybe
-  secret: 'secretest-key', //maybe make something else
-  resave: false,
-  saveUninitialized: true
+	secret: 'secretest-key', //maybe make something else
+	resave: false,
+	saveUninitialized: true
 })); //session expires when closed browser, add cookie->Max age if we want it timed
 
 //Routes
-const regisRoute = require('./routes/registration_route')
-const rformRoute = require('./routes/registration_form_route')
-const loginRoute = require('./routes/login_route')
+const regisRoute = require('./routes/registration_route');
+const rformRoute = require('./routes/registration_form_route');
+const loginRoute = require('./routes/login_route');
 
-const petSeRoute = require('./routes/search')
-const petPrRoute = require('./routes/profiles')
-const logouRoute = require('./routes/logout')
-const newPeRoute = require('./routes/newPet')
+const petSeRoute = require('./routes/search');
+const petPrRoute = require('./routes/profiles');
+const logouRoute = require('./routes/logout');
+const newPeRoute = require('./routes/newPet');
 
 //Routes - Pages
-app.use('/registration_route', regisRoute)
-app.use('/login_route', loginRoute)
-app.use('/registration_form_route', rformRoute)
+app.use('/registration_route', regisRoute);
+app.use('/login_route', loginRoute);
+app.use('/registration_form_route', rformRoute);
 
-app.use('/search', petSeRoute)
-app.use('/profiles', petPrRoute)
-app.use('/create_listing', newPeRoute)
-app.use('/logout', logouRoute)
+app.use('/search', petSeRoute);
+app.use('/profiles', petPrRoute);
+app.use('/create_listing', newPeRoute);
+app.use('/logout', logouRoute);
 
 app.engine('hbs', exphbs.engine({extname: 'hbs'}));
 app.set('view engine', 'hbs');// set default file extenstion for views as .hbs
@@ -42,7 +42,7 @@ app.set('views', './views');// set dir for views
 require('./database'); // mongodb stuff now in database
 
 app.get('/', (req, res)=> {
-  res.redirect('/registration_route');
+	res.redirect('/registration_route');
 });
 
 // Start the server
@@ -53,15 +53,15 @@ const port = process.env.PORT || 3000;
 
 // app listen without the console log
 if (process.env.NODE_ENV !== 'test') {
-  app.listen(port);
+	app.listen(port);
 }
 
 // ctrl + c in terminal to stop
 
 app.use((req, res, next)=>{// should spy n see the get stuff but idk what???
-  // console.log(req.url); // returns like the /users, /posts stuffs
-  console.log(`${req.method}:${req.url}`);// log method and url, GET:/users
-  next();
+	// console.log(req.url); // returns like the /users, /posts stuffs
+	console.log(`${req.method}:${req.url}`);// log method and url, GET:/users
+	next();
 });
 
 module.exports = {app: app}; // export app for testing
