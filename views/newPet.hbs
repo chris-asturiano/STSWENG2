@@ -2,7 +2,7 @@
 
 <div style="width: 40%; margin: auto;">
     <p class="fs-2 fw-semibold">Create a Custom Pet!</p>
-    <form method="post" action="/create_listing/custom" id="customForm">
+    <form method="post" action="/create_listing/custom" id="customForm" enctype="multipart/form-data">
         <div class="mb-3">
             <label for="speciesSelect" class="form-label">What species is it?</label>
             <select name="species" id="speciesSelect" class="form-select">
@@ -32,6 +32,14 @@
         <div class="mb-3">
             <label for="nameInput">Pet Name</label><br>
             <input type="text" name="name" id="nameInput" placeholder="Name your pet!" required>
+        </div>
+        <div class="mb-3">
+            <label for="descriptionInput">Description</label><br>
+            <textarea name="description" id="descriptionInput" placeholder="Add a description" required></textarea>
+        </div>
+        <div class="mb-3">
+            <label for="petImage" class="form-label">Upload Pet Image</label>
+            <input type="file" name="image" id="petImage" class="form-control" required>
         </div>
         <button type="submit" class="btn btn-primary mb-3" id="submitButton" disabled>Create</button>
     </form>
