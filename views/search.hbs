@@ -8,27 +8,27 @@
                 <div class="mb-3">
                     <label for="speciesSelect" class="form-label">Species</label>
                     <select name="species" id="speciesSelect" class="form-select form-select-lg">
-                        <option value="DNM" selected>Any Species</option>
-                        <option value="doggo">Dogs</option>
-                        <option value="hissy">Cats</option>
-                        <option value="borb">Birds</option>
-                        <option value="smol">Rodents</option>
+                        <option value="DNM"   {{#if search.species.DNM}}selected{{/if}}>Any Species</option>
+                        <option value="doggo" {{#if search.species.doggo}}selected{{/if}}>Dogs</option>
+                        <option value="hissy" {{#if search.species.hissy}}selected{{/if}}>Cats</option>
+                        <option value="borb"  {{#if search.species.borb}}selected{{/if}}>Birds</option>
+                        <option value="smol"  {{#if search.species.smol}}selected{{/if}}>Rodents</option>
                     </select> 
                 </div>
                 <div class="mb-3">
                     <label for="maintSelect" class="form-label">Maintenance</label>
                     <select name="maintenance" id="maintSelect" class="form-select form-select-lg">
-                        <option value="DNM" selected>Does not matter</option>
-                        <option value="high">High Maintenance</option>
-                        <option value="low">Self-Sufficient</option>
+                        <option value="DNM" {{#if search.maintenance.DNM}}selected{{/if}}>Does not matter</option>
+                        <option value="high"{{#if search.maintenance.high}}selected{{/if}}>High Maintenance</option>
+                        <option value="low" {{#if search.maintenance.low}}selected{{/if}}>Self-Sufficient</option>
                     </select> 
                 </div>
                 <div class="mb-3">
                     <label for="temperSelect" class="form-label">Temperament</label>
                     <select name="temper" id="temperSelect" class="form-select form-select-lg">
-                        <option value="DNM" selected>Does not matter</option>
-                        <option value="playful">Playful</option>
-                        <option value="lax">Lax</option>
+                        <option value="DNM"    {{#if search.temper.DNM}}selected{{/if}}>Does not matter</option>
+                        <option value="playful"{{#if search.temper.playful}}selected{{/if}}>Playful</option>
+                        <option value="lax"    {{#if search.temper.lax}}selected{{/if}}>Lax</option>
                     </select> 
                 </div>
                 <button class="btn btn-primary mb-3" id="searchButton">Search</button>
@@ -36,7 +36,7 @@
         </div>
         <div class="col-8">
             <p class="text-start">Results</p>
-            <div class="row" id="resultContainer">
+            <div class="row grid gap-2 column-gap-2" id="resultContainer">
                 {{#unless results}} 
                     <p>Nothing here! ヾ(•ω•`)o</p>
                 {{else}}
