@@ -1,31 +1,48 @@
 const express = require('express');
 const router = express.Router();
+const multer = require('multer');
+const path = require('path');
 
 const Pet = require('../database/schemas/Pet');
 
+const storage = multer.diskStorage({
+    destination: function(req, file, cb) {
+        cb(null, 'public/assets/pet_gallery/'); 
+    },
+    filename: function(req, file, cb) {
+        const ext = path.extname(file.originalname);
+        cb(null, req.body.name + '_img0.png');
+    }
+});
+
+const upload = multer({ storage: storage });
+
 router.get('/', (req, res) => {
     try {
-        if (!req.session.userId) { res.redirect('/login_route'); return; }
-        res.render( 'newPet', { title: 'Create Custom Pet Listing' } );
+        if (!req.session.userId) { 
+            res.redirect('/login_route'); 
+            return; 
+        }
+        res.render('newPet', { title: 'Create Custom Pet Listing' });
     } catch (err) {
         console.error('Error in custom listing page:', err);
         res.status(500).send('Internal Server Error');
     }
 });
 
-router.post('/custom', async (req, res) => {
+router.post('/custom', upload.single('image'), async (req, res) => {
     try {
-        const { species, maintenance, temper, name} = req.body;
+        const { species, maintenance, temper, name, description } = req.body;
         const newPet = new Pet({
             species: species,
-            petcode: 'dummy' + species,
+            petcode: name,
             name: name,
-            description: "This is a custom pet.",
+            description: description,
             in_gallery: 1,
             maintenance: maintenance,
             temper: temper
         });
-      
+
         await newPet.save();
         console.log('Successfully created a custom pet');
         res.redirect('/profiles');
