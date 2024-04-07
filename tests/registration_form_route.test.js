@@ -81,7 +81,7 @@ describe('POST /register', () => {
 
     expect(response.status).toBe(302); 
     expect(response.header.location).toBe('/login_route');
-    // delete the user
+    // delete the use r
     await User.deleteOne({ username: 'testuser' });
   });
 });
